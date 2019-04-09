@@ -1,10 +1,14 @@
 CC=g++
+PROG=test
+deps=$(shell find ./ -name "*.h")
+srcs=$(shell find ./ -name "*.cpp")
+obj=$(srcs:%.cpp=%.o)
 
-test: a.cpp
-	$(CC) a.cpp
+$(PROG): $(obj)
+	$(CC) -o $(PROG) $(obj)
+
+%.o: %.cpp $(deps)
+	$(CC) -c $< -o $@
 
 clean:
-	rm *.out
-	rm *.~
-	rm *.class
-	rm *.o
+	rm -rf $(obj) $(PROG)
