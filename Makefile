@@ -11,4 +11,4 @@ $(PROG): $(obj)
 	$(CC) -c $< -o $@
 
 clean:
-	rm -rf $(obj) $(PROG)
+	rm -rf $(obj) $(PROG) *.[oa] *.out
