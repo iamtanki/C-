@@ -5,27 +5,49 @@
 using namespace std;
 
 
+void reverseArray(int *array, int size);
+void printArray(int *array, int size);
+
 int main(){
 
-// 数字定义
-   short  s = 10;
-   int    i = -1000;
-   long   l = 100000;
-   float  f = 230.47;
-   double d = 200.374;
 
-   // 数学运算
-   cout << "sin(d) :" << sin(d) << endl;
-   cout << "abs(i)  :" << abs(i) << endl;
-   cout << "floor(d) :" << floor(d) << endl;
-   cout << "sqrt(f) :" << sqrt(f) << endl;
-   cout << "pow( d, 2) :" << pow(d, 2) << endl;
+  int array[] ={1,2,3,4,5,6,7,8,9};
 
-   srand((unsigned)time(NULL));
+  int size = 9 ;
 
-   for(int a = 0; a < 10; a++){
-     cout << rand() << endl;
-   }
+  printArray(array,size);
 
-   return 0;
+  reverseArray(array, size);
+
+  cout << "the reserved array is :" << endl;
+
+  printArray(array, size);
+
+  return 0;
+}
+
+void reverseArray(int *array, int size){
+
+  if(size>1){
+    int mid = size / 2;
+    for(int i = 0; i <mid ; i++ ){
+      int tmp = array[i];
+      array[i] = array[size  - i -1];
+      array[size - i - 1] = tmp;
+    }
+  }
+
+}
+
+
+void printArray(int *array, int size){
+
+  if(size >0){
+    for(int i =0 ; i<size ; i++){
+      cout<< array[i] << endl;
+    }
+  }else{
+    cout << " 数目为0 " << endl;
+  }
+  
 }
