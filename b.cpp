@@ -15,10 +15,22 @@ struct MyException : public exception
 
 int main(){
 
+  int v = 45;
+  int *p ;
+  p = &v;
+
+  int &r = *p;
+
+  *p = 56;
+
+  cout << "the point is : " <<  r << endl;
+    cout << "the point is : " <<  v << endl;
+      cout << "the point is : " <<  *p << endl;
+
   char data[100] ;
 
   const char *file  = "file.txt";
-  
+
   //  ofstream outfile;
   // outfile.open(file, ios::app);
 
