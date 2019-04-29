@@ -10,7 +10,7 @@ void printArray(int *array, int size);
 
 class Shape {
    protected:
-      int width, height;
+     int width, height;
    public:
       Shape( int a=0, int b=0)
       {
@@ -59,7 +59,7 @@ int main()
    // 调用三角形的求面积函数 area
    cout<<  shape->area() << endl;
    
-   return 0;
+    return 0;
 }
 
 void reverseArray(int *array, int size){
@@ -87,3 +87,4 @@ void printArray(int *array, int size){
   }
   
 }
+ 
